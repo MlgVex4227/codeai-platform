@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://codeai:password@db:5432/codeai
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - SESSION_SECRET=${SESSION_SECRET}
+      - NODE_ENV=production
+    depends_on:
+      - db
+    volumes:
+      - ./:/app
+      - /app/node_modules
+
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=codeai
+      - POSTGRES_USER=codeai
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

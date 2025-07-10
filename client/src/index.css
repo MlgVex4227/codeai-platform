@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  
+  /* Custom colors matching the design */
+  --editor-bg: hsl(240, 10%, 11.8%);
+  --panel-bg: hsl(240, 8%, 17.6%);
+  --sidebar-bg: hsl(240, 9%, 14.7%);
+  --border-color: hsl(240, 6%, 23.5%);
+  --text-primary: hsl(0, 0%, 80%);
+  --text-secondary: hsl(215, 13.8%, 63.1%);
+  --accent-blue: hsl(207, 90%, 54%);
+  --success: hsl(122, 39%, 49%);
+  --warning: hsl(36, 100%, 50%);
+  --error: hsl(4, 90%, 58%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: var(--editor-bg);
+    color: var(--text-primary);
+  }
+}
+
+@layer utilities {
+  .editor-bg {
+    background-color: var(--editor-bg);
+  }
+  
+  .panel-bg {
+    background-color: var(--panel-bg);
+  }
+  
+  .sidebar-bg {
+    background-color: var(--sidebar-bg);
+  }
+  
+  .border-color {
+    border-color: var(--border-color);
+  }
+  
+  .text-primary {
+    color: var(--text-primary);
+  }
+  
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .accent-blue {
+    color: var(--accent-blue);
+  }
+  
+  .bg-accent-blue {
+    background-color: var(--accent-blue);
+  }
+  
+  .text-success {
+    color: var(--success);
+  }
+  
+  .bg-success {
+    background-color: var(--success);
+  }
+  
+  .text-warning {
+    color: var(--warning);
+  }
+  
+  .bg-warning {
+    background-color: var(--warning);
+  }
+  
+  .text-error {
+    color: var(--error);
+  }
+  
+  .bg-error {
+    background-color: var(--error);
+  }
+}
+
+/* Monaco Editor Theme */
+.monaco-editor {
+  background-color: var(--editor-bg) !important;
+}
+
+.monaco-editor .margin {
+  background-color: var(--editor-bg) !important;
+}
+
+.monaco-editor .monaco-editor-background {
+  background-color: var(--editor-bg) !important;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sidebar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
