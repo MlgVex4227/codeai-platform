@@ -1,0 +1,44 @@
+{
+  "name": "CodeAI Platform",
+  "description": "AI-powered online coding platform with code generation and execution",
+  "repository": "https://github.com/MlgVex4227/codeai-platform",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "heroku", "ai", "coding", "education"],
+  "image": "heroku/nodejs",
+  "addons": [
+    "heroku-postgresql:mini"
+  ],
+  "env": {
+    "NODE_ENV": {
+      "description": "Environment setting",
+      "value": "production"
+    },
+    "OPENAI_API_KEY": {
+      "description": "OpenAI API key for AI code generation",
+      "required": true
+    },
+    "SESSION_SECRET": {
+      "description": "Secret key for session management",
+      "generator": "secret"
+    },
+    "REPLIT_DOMAINS": {
+      "description": "Allowed domains for OAuth",
+      "value": "your-app-name.herokuapp.com"
+    },
+    "ISSUER_URL": {
+      "description": "OAuth issuer URL",
+      "value": "https://replit.com/oidc"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
